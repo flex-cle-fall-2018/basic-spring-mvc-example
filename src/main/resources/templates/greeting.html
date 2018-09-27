@@ -1,0 +1,12 @@
+<h1>Greeting Page</h1>
+
+<p>Welcome, <span th:text="${name}"></span>.</p>
+
+
+<a th:if='${!name.equals("Alex")}' th:href="@{/greeting(name=Alex)}">Greet Alex</a>
+<a th:unless='${name.equals("Ruby")}' th:href="@{/greeting(name=Ruby)}">Greet Ruby</a>
+<a th:href="@{/greeting(name=Bob)}">Greet Bob</a>
+
+<ol>
+	<li th:each="task : ${tasks}" th:text="${task}"></li>
+</ol>
